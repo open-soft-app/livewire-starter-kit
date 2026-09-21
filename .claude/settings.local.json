@@ -1,0 +1,50 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(perl -0pi -e 's/ Livewire::test\\\\\\(Report::class\\\\\\)\\\\n ->call\\\\\\('\\\\''load'\\\\'', \\\\$this->incident\\\\\\)\\\\n ->call\\\\\\('\\\\''edit'\\\\'', \\\\$foreign->id\\\\\\)\\\\n ->assertStatus\\\\\\(404\\\\\\);/ expect\\(fn \\(\\) => Livewire::test\\(Report::class\\)\\\\n ->call\\('\\\\''load'\\\\'', \\\\$this->incident\\)\\\\n ->call\\('\\\\''edit'\\\\'', \\\\$foreign->id\\)\\)\\\\n ->toThrow\\(ModelNotFoundException::class\\);/' tests/Feature/Livewire/Incidents/ReportTest.php)",
+      "Bash(perl -0pi -e \"s/use Livewire\\\\\\\\\\\\\\\\Livewire;\\\\n/use Livewire\\\\\\\\\\\\\\\\Livewire;\\\\n/; s/\\(use App\\\\\\\\\\\\\\\\Livewire\\\\\\\\\\\\\\\\Incidents\\\\\\\\\\\\\\\\Report;\\\\n\\)/\\\\$1use Illuminate\\\\\\\\\\\\\\\\Database\\\\\\\\\\\\\\\\Eloquent\\\\\\\\\\\\\\\\ModelNotFoundException;\\\\n/\" tests/Feature/Livewire/Incidents/ReportTest.php)",
+      "Bash(vendor/bin/pint --format agent tests/Feature/Livewire/Incidents)",
+      "Bash(mysql -uroot -e \"CREATE DATABASE centraleoperativa_scratch_test\")",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_scratch_test php artisan test --compact tests/Feature/Livewire/Incidents)",
+      "Bash(mysql -uroot -e \"DROP DATABASE centraleoperativa_scratch_test\")",
+      "Bash(rm resources/views/livewire/dispatches/delete.blade.php)",
+      "Bash(vendor/bin/pint --format agent app/Livewire/Dispatches app/Livewire/Traits/DispatchForm.php tests/Feature/Livewire/Dispatches routes/web.php)",
+      "Bash(composer show *)",
+      "Bash(vendor/bin/pint app/Livewire/Roles/ManagePermissions.php --format agent)",
+      "Bash(vendor/bin/pint app/Models/Role.php --format agent)",
+      "mcp__laravel-boost__database-query",
+      "Bash(vendor/bin/pint app/Models/Role.php app/Models/Permission.php config/permission.php app/Livewire/Roles/ManagePermissions.php --format agent)",
+      "Bash(vendor\\\\bin\\\\pint --dirty --format agent)",
+      "mcp__laravel-boost__database-schema",
+      "PowerShell(New-Item -ItemType Directory \"C:\\\\laragon\\\\www\\\\centraleoperativa\\\\resources\\\\views\\\\components\" -Force)",
+      "PowerShell(vendor/bin/pint --format agent app/Livewire/Permissions tests/Feature/Livewire/Permissions routes/web.php)",
+      "PowerShell(php artisan route:list --name=permissions)",
+      "PowerShell(php artisan view:cache 2>&1)",
+      "PowerShell(php artisan test --compact tests/Feature/Livewire/Permissions 2>&1)",
+      "Bash(python -)",
+      "Bash(python \"C:/Users/otupa/AppData/Local/Temp/claude/c--laragon-www-centraleoperativa/22c072c3-f89d-4fbc-842c-903b177d4302/scratchpad/fix_tests.py\")",
+      "Bash(vendor/bin/pint --format agent app/Models/User.php app/Livewire/Users app/Livewire/User database/factories/UserFactory.php database/seeders/DatabaseSeeder.php database/migrations/2026_09_19_170519_add_firstname_and_lastname_to_users_table.php tests/Feature/Livewire/Users tests/Feature/Livewire/User)",
+      "Bash(mysql -uroot -e \"CREATE DATABASE IF NOT EXISTS centraleoperativa_tmp_test\")",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Livewire/Users tests/Feature/Livewire/User tests/Feature/Auth)",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Livewire/Users/CreateTest.php --filter=\"dispatches created event\")",
+      "Bash(vendor/bin/pint --format agent tests/Feature/Livewire/Users)",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Livewire/Users tests/Feature/Livewire/User)",
+      "Bash(mysql -uroot -e \"DROP DATABASE centraleoperativa_tmp_test\")",
+      "Bash(vendor/bin/pint --format agent app/Actions tests/Feature/Auth)",
+      "Bash(mysql -uroot -e \"CREATE DATABASE centraleoperativa_tmp_test\")",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Auth)",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Auth/RegistrationTest.php)",
+      "Bash(vendor/bin/pint --format agent app database tests/Feature)",
+      "Bash(vendor/bin/pint --format agent database/factories)",
+      "Bash(DB_CONNECTION=mysql DB_DATABASE=centraleoperativa_tmp_test php artisan test --compact tests/Feature/Livewire/Users/IndexTest.php --filter=\"filters users by search term\")",
+      "Bash(vendor/bin/pint --format agent app/Livewire/Users)",
+      "Bash(vendor/bin/pint bootstrap/app.php routes/web.php app/Livewire/User/Profile/Information.php --format agent)",
+      "Bash(ls tests/Feature/Livewire/Users tests/Feature/Livewire/Roles; sed -n 1,40p tests/Feature/Livewire/Roles/*Index*.php 2>/dev/null | head -50)",
+      "Bash(vendor/bin/pint tests/Feature/AdminRoutesAccessTest.php --format agent)"
+    ],
+    "additionalDirectories": [
+      "C:\\laragon\\www\\centraleoperativa\\resources\\views\\livewire\\dispatches",
+      "C:\\laragon\\www\\centraleoperativa\\tests\\Feature\\Livewire\\Roles"
+    ]
+  }
+}
