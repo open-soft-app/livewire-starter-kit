@@ -34,13 +34,13 @@
                 <x-slot:brand>
                     <div class="my-4 flex items-center justify-center">
                         {{-- <img src="{{ asset('/assets/images/tsui.png') }}" width="40" height="40" /> --}}
-                        <x-button.circle lg icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
+                        <x-button.circle lg :icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
                     </div>
                 </x-slot:brand>
                 <x-slot:brand-collapsed>
                     <div class="my-4 flex items-center justify-center">
                         {{-- <img src="{{ asset('/assets/images/tsui.png') }}" width="20" height="20" /> --}}
-                        <x-button.circle lg icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
+                        <x-button.circle lg :icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
                     </div>
                 </x-slot:brand-collapsed>
                 <x-side-bar.item :text="__('app.sidebar.dashboard')" icon="home" :route="route('dashboard')" />
