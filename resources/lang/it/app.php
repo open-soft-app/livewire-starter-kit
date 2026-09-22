@@ -3,13 +3,16 @@
 declare(strict_types=1);
 
 return [
+    'dashboard' => [
+        'welcome' => 'Benvenuto!',
+    ],
     'sidebar' => [
-        'dashboard'            => 'Pannello di Controllo',
-        'users_management'     => 'Gestione Utenti',
-        'users'                => 'Utenti',
-        'roles'                => 'Ruoli',
-        'permissions'          => 'Permessi',
-        'welcome_page'         => 'Pagina di Benvenuto',
+        'dashboard'        => 'Pannello di Controllo',
+        'users_management' => 'Gestione Utenti',
+        'users'            => 'Utenti',
+        'roles'            => 'Ruoli',
+        'permissions'      => 'Permessi',
+        'welcome_page'     => 'Pagina di Benvenuto',
     ],
     'permissions' => [
         'id'           => '#',

@@ -13,7 +13,7 @@
         <form id="forgot-password" method="POST" action="{{ route('password.email') }}" class="space-y-4">
             @csrf
 
-            <x-input label="Email *"
+            <x-input label="{{ __('Email') }} *"
                      type="email"
                      name="email"
                      :value="old('email')"
@@ -27,7 +27,7 @@
                 <x-button submit form="forgot-password" :text="__('Email Password Reset Link')" block round/>
 
                 <span class="text-sm text-gray-600 text-center">
-                    Remembered your password?
+                    {{ __('Remembered your password?') }}
                     <x-link :href="route('login')" :text="__('Back to log in')" sm bold />
                 </span>
             </div>

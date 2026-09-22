@@ -27,45 +27,20 @@
             <x-toast />
         </x-slot:top>
         <x-slot:header>
-            <x-layout.header>
-                <x-slot:right>
-                    {{-- <x-dropdown icon="ellipsis-vertical" text="ffff"> --}}
-                    <x-dropdown>
-                        <x-slot:action>
-                            <x-button x-on:click="show = !show" round='full' sm outline>{{ auth()->user()->name }}</x-button>
-                            {{-- <div>
-                                <button class="cursor-pointer" x-on:click="show = !show">
-                                    <span class="text-base font-semibold text-primary-500" x-text="`${name}`"></span>
-                                </button>
-                            </div> --}}
-                        </x-slot:action>
-                        <x-slot:header>
-                            <div class="space-y-3">
-                                <x-theme-switch block />
-                                <x-language-switch />
-                            </div>
-                        </x-slot:header>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <x-dropdown.items :text="__('Profile')" :href="route('user.profile')" />
-                            <x-dropdown.items :text="__('Logout')" onclick="event.preventDefault(); this.closest('form').submit();" separator />
-                        </form>
-                    </x-dropdown>
-                </x-slot:right>
-            </x-layout.header>
+            <x-layout.header />
         </x-slot:header>
         <x-slot:menu>
             <x-side-bar smart collapsible>
                 <x-slot:brand>
                     <div class="my-4 flex items-center justify-center">
                         {{-- <img src="{{ asset('/assets/images/tsui.png') }}" width="40" height="40" /> --}}
-                        <x-button.circle lg icon="globe-europe-africa" :href="route('welcome')" color="primary" light />
+                        <x-button.circle lg icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
                     </div>
                 </x-slot:brand>
                 <x-slot:brand-collapsed>
                     <div class="my-4 flex items-center justify-center">
                         {{-- <img src="{{ asset('/assets/images/tsui.png') }}" width="20" height="20" /> --}}
-                        <x-button.circle lg icon="globe-europe-africa" :href="route('welcome')" color="secondary" light />
+                        <x-button.circle lg icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
                     </div>
                 </x-slot:brand-collapsed>
                 <x-side-bar.item :text="__('app.sidebar.dashboard')" icon="home" :route="route('dashboard')" />
@@ -76,6 +51,45 @@
                         <x-side-bar.item :text="__('app.sidebar.permissions')" icon="key" :route="route('permissions.index')" />
                     </x-side-bar.item>
                 @endrole
+                <x-slot:footer>
+                    <div class="bg-primary-500" data-sidebar-footer>
+                        <form method="POST" action="{{ route('logout') }}" class="hidden">
+                            @csrf
+                        </form>
+                        <div x-show="railed" x-cloak>
+                            <x-dropdown position="right-end" scope="full" hover>
+                                <x-slot:action>
+                                    <div x-on:click="show = !show"
+                                        class="flex w-full cursor-pointer items-center justify-center py-4 text-white hover:bg-primary-600">
+                                        <x-icon name="user-circle" class="h-6 w-6" />
+                                    </div>
+                                </x-slot:action>
+                                <x-slot:header>
+                                    <div class="space-y-3" x-on:pointerenter="clearTimeout(timeout)" x-on:pointerleave="leave($event)">
+                                        <x-theme-switch block />
+                                        <x-language-switch />
+                                    </div>
+                                </x-slot:header>
+                                <div x-on:pointerenter="clearTimeout(timeout)" x-on:pointerleave="leave($event)">
+                                    <x-dropdown.items :text="__('profile.title')" icon="user" :href="route('user.profile')" />
+                                    <x-dropdown.items :text="__('Logout')" icon="arrow-right-start-on-rectangle" separator
+                                        onclick="event.preventDefault(); document.querySelector('[data-sidebar-footer] form').submit();" />
+                                </div>
+                            </x-dropdown>
+                        </div>
+                        <ul x-show="! railed" class="*:flex *:flex-col-reverse">
+                            <x-side-bar.item scope="footer" :text="auth()->user()->name" icon="user-circle">
+                                <li class="space-y-3 py-2">
+                                    <x-theme-switch block />
+                                    <x-language-switch />
+                                </li>
+                                <x-side-bar.item scope="footer-menu" :text="__('profile.title')" icon="user" :route="route('user.profile')" />
+                                <x-side-bar.item scope="footer-menu" :text="__('Logout')" icon="arrow-right-start-on-rectangle" href="#"
+                                    onclick="event.preventDefault(); this.closest('[data-sidebar-footer]').querySelector('form').submit();" />
+                            </x-side-bar.item>
+                        </ul>
+                    </div>
+                </x-slot:footer>
             </x-side-bar>
         </x-slot:menu>
         {{ $slot }}

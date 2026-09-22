@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Models\User;
 
 it('renders the register page', function () {
+    app()->setLocale('en');
+
     $this->get(route('register'))
         ->assertOk()
         ->assertSee('Create your account');

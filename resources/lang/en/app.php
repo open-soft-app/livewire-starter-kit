@@ -3,16 +3,16 @@
 declare(strict_types=1);
 
 return [
-    'profile'    => 'Profile',
-    'ascending'  => 'Ascending',
-    'descending' => 'Descending',
-    'sidebar'    => [
-        'dashboard'            => 'Dashboard',
-        'users_management'     => 'Users Management',
-        'users'                => 'Users',
-        'roles'                => 'Roles',
-        'permissions'          => 'Permissions',
-        'welcome_page'         => 'Welcome Page',
+    'dashboard' => [
+        'welcome' => 'Welcome!',
+    ],
+    'sidebar' => [
+        'dashboard'        => 'Dashboard',
+        'users_management' => 'Users Management',
+        'users'            => 'Users',
+        'roles'            => 'Roles',
+        'permissions'      => 'Permissions',
+        'welcome_page'     => 'Welcome Page',
     ],
     'permissions' => [
         'id'           => '#',

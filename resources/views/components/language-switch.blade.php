@@ -3,18 +3,15 @@
     $supportedLocales = ['it' => 'Italiano', 'en' => 'English'];
 @endphp
 
-<div class="flex gap-1">
-    @foreach ($supportedLocales as $locale => $label)
-        @if ($currentLocale === $locale)
-            <span class="px-2.5 py-1.5 text-sm font-semibold text-primary-500 rounded">{{ $label }}</span>
-        @else
-            <form method="POST" action="{{ route('language.switch', $locale) }}" class="inline">
-                @csrf
-                <button type="submit"
-                        class="px-2.5 py-1.5 text-sm font-medium text-gray-600 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-400 transition">
-                    {{ $label }}
-                </button>
-            </form>
-        @endif
-    @endforeach
-</div>
+<form method="POST" action="{{ route('language.switch', $currentLocale) }}">
+    @csrf
+    <div class="flex items-center justify-center gap-x-4">
+        @foreach ($supportedLocales as $locale => $label)
+            <x-radio :label="$label"
+                     name="locale"
+                     :value="$locale"
+                     :checked="$currentLocale === $locale"
+                     x-on:change="$el.form.action = '{{ route('language.switch', $locale) }}'; $el.form.submit()" />
+        @endforeach
+    </div>
+</form>

@@ -19,7 +19,8 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-white">
             <div class="w-full sm:max-w-lg mt-6 px-6">
                 <div class="mb-6 flex items-center justify-center">
-                    <img src="{{ asset('/assets/images/tsui.png') }}" />
+                    <x-button.circle lg :icon="config('app.logo_icon')" :href="route('welcome')" color="primary" light />
+                    {{-- <img src="{{ asset('/assets/images/tsui.png') }}" /> --}}
                 </div>
 
                 {{ $slot }}

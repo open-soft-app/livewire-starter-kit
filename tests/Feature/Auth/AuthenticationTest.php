@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Models\User;
 
 it('renders the login page', function () {
+    app()->setLocale('en');
+
     $this->get(route('login'))
         ->assertOk()
         ->assertSee('Log in');

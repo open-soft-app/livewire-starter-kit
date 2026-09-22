@@ -15,4 +15,6 @@ return [
 
     'fonts' => ['inter', 'poppins', 'roboto'],
 
+    'logo_icon' => 'globe-europe-africa'
+
 ];

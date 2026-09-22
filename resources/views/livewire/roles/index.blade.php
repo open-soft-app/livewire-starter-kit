@@ -14,8 +14,8 @@
                 ['label' => __('app.roles.name'), 'value' => 'name'],
             ]" select="label:label|value:value" />
             <x-select.native wire:model.live="sort.direction" :options="[
-                ['label' => __('app.descending'), 'value' => 'desc'],
-                ['label' => __('app.ascending'), 'value' => 'asc'],
+                ['label' => __('Descending'), 'value' => 'desc'],
+                ['label' => __('Ascending'), 'value' => 'asc'],
             ]" select="label:label|value:value" />
         </div>
 

@@ -24,21 +24,21 @@
                          autocomplete="family-name" />
             </div>
 
-            <x-input label="Email *"
+            <x-input label="{{ __('Email') }} *"
                      type="email"
                      name="email"
                      :value="old('email')"
                      required
                      autocomplete="username" />
 
-            <x-password label="Password *"
+            <x-password label="{{ __('Password') }} *"
                         name="password"
                         required
                         rules
                         generator="password_confirmation"
                         autocomplete="new-password" />
 
-            <x-password label="Confirm Password *"
+            <x-password label="{{ __('Confirm Password') }} *"
                         name="password_confirmation"
                         required
                         autocomplete="new-password" />
@@ -49,7 +49,7 @@
                 <x-button submit form="register" :text="__('Register')" block round />
 
                 <span class="text-center text-sm text-gray-600">
-                    Already have an account?
+                    {{ __('Already have an account?') }}
                     <x-link :href="route('login')" :text="__('Log in!')" sm bold />
                 </span>
             </div>

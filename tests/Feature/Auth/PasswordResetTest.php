@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Auth\Notifications\ResetPassword;
 
 it('renders the forgot password page', function () {
+    app()->setLocale('en');
+
     $this->get(route('password.request'))
         ->assertOk()
         ->assertSee('Forgot your password?');

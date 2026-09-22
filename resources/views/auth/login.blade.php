@@ -9,7 +9,7 @@
         <form id="login" method="POST" action="{{ route('login.store') }}" class="space-y-4">
             @csrf
 
-            <x-input label="Email *"
+            <x-input label="{{ __('Email') }} *"
                     type="email"
                     name="email"
                     :value="old('email', '')"
@@ -17,13 +17,13 @@
                     autofocus
                     autocomplete="username" />
 
-            <x-password label="Password *"
+            <x-password label="{{ __('Password') }} *"
                         name="password"
                         required
                         autocomplete="current-password" />
 
             <div class="flex items-center justify-between">
-                <x-checkbox label="Remember me" id="remember_me" name="remember"/>
+                <x-checkbox label="{{ __('Remember me') }}" id="remember_me" name="remember"/>
 
                 <x-link :href="route('password.request')" :text="__('Forgot your password?')" sm underline colorless/>
             </div>
@@ -34,7 +34,7 @@
                 <x-button submit form="login" :text="__('Log in')" block round/>
 
                 <span class="text-sm text-gray-600 text-center">
-                    Don't have an account?
+                    {{ __("Don't have an account?") }}
                     <x-link :href="route('register')" :text="__('Create account!')" sm bold />
                 </span>
             </div>
